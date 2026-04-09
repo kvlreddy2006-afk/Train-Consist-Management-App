@@ -1,38 +1,22 @@
-import java.util.ArrayList;
+import java.util.LinkedHashSet;
 
 public class TrainConsistManagementApp {
     public static void main(String[] args) {
 
+        // Step 1: Create LinkedHashSet for train formation
+        LinkedHashSet<String> train = new LinkedHashSet<>();
 
-        ArrayList<String> passengerBogies = new ArrayList<>();
+        // Step 2: Add bogies
+        train.add("Engine");
+        train.add("Sleeper");
+        train.add("Cargo");
+        train.add("Guard");
 
+        // Step 3: Attempt to add duplicate bogie
+        train.add("Sleeper"); // Duplicate (ignored)
 
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
-
-
-        System.out.println("Passenger Bogies after addition:");
-        System.out.println(passengerBogies);
-
-
-        passengerBogies.remove("AC Chair");
-
-
-        System.out.println("\nAfter removing AC Chair:");
-        System.out.println(passengerBogies);
-
-
-        boolean exists = passengerBogies.contains("Sleeper");
-
-        if (exists) {
-            System.out.println("\nSleeper bogie exists in the train.");
-        } else {
-            System.out.println("\nSleeper bogie does not exist.");
-        }
-
-
-        System.out.println("\nFinal Passenger Bogies:");
-        System.out.println(passengerBogies);
+        // Step 4: Display final formation
+        System.out.println("Final Train Formation (Insertion Order Preserved):");
+        System.out.println(train);
     }
 }
